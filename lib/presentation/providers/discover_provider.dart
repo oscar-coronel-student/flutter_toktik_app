@@ -7,6 +7,8 @@ import 'package:toktik/shared/data/local_video_post.dart';
 
 class DiscoverProvider extends ChangeNotifier {
 
+  // TODO: Repository, DataSource
+
   bool initialLoading = true;
   final List<VideoPost> videos;
 
@@ -14,10 +16,12 @@ class DiscoverProvider extends ChangeNotifier {
     videos = [];
 
   Future<void> loadVideos() async {
-    final videoPostsModel = VideoPostListMapper.fromJsonList(videoPosts);
+    await Future.delayed(const Duration( seconds: 2 ));
+
+    final videoPostList = VideoPostListMapper.fromJsonList(videoPosts);
     
     initialLoading = false;
-    videos.addAll(videoPostsModel.toVideoPostModelList());
+    videos.addAll(videoPostList.toVideoPostModelList());
 
     notifyListeners();
   }

@@ -14,7 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<DiscoverProvider>(create: (_) => DiscoverProvider())
+        ChangeNotifierProvider<DiscoverProvider>(
+          lazy: false,
+          create: (_) => DiscoverProvider()..loadVideos()
+        )
       ],
       child: MaterialApp(
         theme: const AppTheme().getTheme(),
