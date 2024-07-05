@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:toktik/models/video_post.dart';
+import 'package:toktik/domain/models/video_post.dart';
 
 VideoPostMapper videoPostMapperFromJson(String str) => VideoPostMapper.fromJson(json.decode(str));
 

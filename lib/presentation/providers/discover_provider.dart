@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:toktik/mappers/video_post_list_mapper.dart';
-import 'package:toktik/models/video_post.dart';
+import 'package:toktik/infrastructure/mappers/video_post_list_mapper.dart';
+import 'package:toktik/domain/models/video_post.dart';
 import 'package:toktik/shared/data/local_video_post.dart';
 
 
 class DiscoverProvider extends ChangeNotifier {
-
-  // TODO: Repository, DataSource
 
   bool initialLoading = true;
   final List<VideoPost> videos;
